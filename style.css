@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg,#0f172a,#1e293b);
+    overflow: hidden;
+}
+
+/* === BACKGROUND ANIMASI HALUS === */
+.background span {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+    bottom: -150px;
+    animation: float 30s linear infinite;
+}
+
+.background span:nth-child(1){ left:15%; animation-delay:0s;}
+.background span:nth-child(2){ left:45%; animation-delay:8s;}
+.background span:nth-child(3){ left:75%; animation-delay:16s;}
+.background span:nth-child(4){ left:90%; animation-delay:24s;}
+
+@keyframes float {
+    from {transform: translateY(0);}
+    to {transform: translateY(-1100px);}
+}
+
+/* === LOGIN BOX === */
+.login-container {
+    position: relative;
+    z-index: 1;
+}
+
+.login-box {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(14px);
+    padding: 45px;
+    border-radius: 12px;
+    width: 340px;
+    color: white;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+    from {opacity:0; transform: translateY(15px);}
+    to {opacity:1; transform: translateY(0);}
+}
+
+.login-box h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* === INPUT === */
+/* === INPUT LEBIH KALEM & ELEGAN === */
+.input-group {
+    position: relative;
+    margin-bottom: 22px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.12);
+    outline: none;
+    
+    /* WARNA BARU */
+    background: rgba(15,23,42,0.6); 
+    color: #e5e7eb;
+
+    font-size: 14px;
+    transition: 0.25s;
+}
+
+/* Efek focus halus */
+.input-group input:focus {
+    border: 1px solid rgba(148,163,184,0.5);
+    background: rgba(15,23,42,0.8);
+}
+
+/* Label */
+.input-group label {
+    position: absolute;
+    left: 14px;
+    top: 14px;
+    font-size: 14px;
+    color: #94a3b8;
+    transition: 0.25s;
+    pointer-events: none;
+}
+
+/* Floating label */
+.input-group input:focus + label,
+.input-group input:valid + label {
+    top: -8px;
+    left: 10px;
+    font-size: 12px;
+    background: #1e293b;
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #cbd5f5;
+}
+
+
+/* === BUTTON === */
+button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: #334155;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #475569;
+    transform: translateY(-2px);
+}
+
+/* === LINK === */
+.register {
+    text-align: center;
+    margin-top: 18px;
+    font-size: 14px;
+    color: #cbd5f5;
+}
+
+.register a {
+    color: #e5e7eb;
+    text-decoration: none;
+}
+
+.register a:hover {
+    text-decoration: underline;
+}
